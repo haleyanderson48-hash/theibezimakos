@@ -170,7 +170,66 @@ function PhotoPlaceholder({ label, caption, aspect, style = {} }) {
   );
 }
 
+function PasswordGate({ onUnlock }) {
+  const [code, setCode] = useState("");
+  const [error, setError] = useState(false);
+
+  const handleSubmit = () => {
+    if (code.trim().toUpperCase() === "FIB27") {
+      onUnlock();
+    } else {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+    }
+  };
+
+  return (
+    <>
+      <style>{FONTS}</style>
+      <div style={{ minHeight: "100vh", background: PALETTE.cream, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", padding: "2rem" }}>
+        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 400, color: PALETTE.charcoal, marginBottom: "0.5rem", textAlign: "center" }}>
+          Tochukwu <span style={{ fontStyle: "italic", color: PALETTE.gold }}>&</span> Kasi
+        </p>
+        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.1rem", fontWeight: 300, color: PALETTE.muted, letterSpacing: "0.1em", marginBottom: "0.5rem" }}>
+          This page is private
+        </p>
+        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1rem", fontStyle: "italic", color: PALETTE.gold, marginBottom: "2.5rem" }}>
+          #TheIbezimakos
+        </p>
+        <div style={{ width: "min(420px, 90vw)", border: `1px solid ${PALETTE.border}`, background: PALETTE.white, padding: "2.5rem" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.3em", textTransform: "uppercase", color: PALETTE.muted, marginBottom: "1.5rem", textAlign: "center" }}>
+            Enter your invitation code
+          </p>
+          <input
+            type="text"
+            placeholder="Your code here..."
+            value={code}
+            onChange={e => setCode(e.target.value)}
+            onKeyDown={e => e.key === "Enter" && handleSubmit()}
+            style={{ width: "100%", fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", fontWeight: 300, border: "none", borderBottom: `1px solid ${error ? "#c0392b" : PALETTE.border}`, background: "transparent", padding: "0.6rem 0", outline: "none", textAlign: "center", letterSpacing: "0.2em", marginBottom: "1.5rem", color: PALETTE.charcoal }}
+          />
+          {error && (
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.95rem", fontStyle: "italic", color: "#c0392b", textAlign: "center", marginBottom: "1rem" }}>
+              Incorrect code — please try again
+            </p>
+          )}
+          <button
+            onClick={handleSubmit}
+            style={{ width: "100%", fontFamily: "'DM Sans', sans-serif", fontSize: "0.72rem", letterSpacing: "0.25em", textTransform: "uppercase", fontWeight: 500, color: PALETTE.white, background: PALETTE.charcoal, border: "none", padding: "1rem", cursor: "pointer" }}
+          >
+            Enter
+          </button>
+        </div>
+        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.9rem", fontStyle: "italic", color: PALETTE.goldLight, marginTop: "2rem" }}>
+          Code can be found on your invitation
+        </p>
+      </div>
+    </>
+  );
+}
+
 export default function WeddingWebsite() {
+  const [unlocked, setUnlocked] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", partner: "", guests: "2", attending: "yes", meal: "", dietary: "", notes: "" });
@@ -180,6 +239,8 @@ export default function WeddingWebsite() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  if (!unlocked) return <PasswordGate onUnlock={() => setUnlocked(true)} />;
 
   const handleRsvp = () => {
     if (formData.name.trim()) {
@@ -218,7 +279,7 @@ export default function WeddingWebsite() {
 
       {/* ── NAVIGATION ── */}
       <nav className={`ibz-nav ${scrolled ? "scrolled" : ""}`}>
-        <span className="ibz-nav-logo">I & I</span>
+        <span className="ibz-nav-logo">T & K</span>
         <ul className="ibz-nav-links">
           {navLinks.map((l) => (
             <li key={l.href}>
@@ -240,9 +301,9 @@ export default function WeddingWebsite() {
         <div className="ibz-hero-content">
           <p className="ibz-eyebrow">We are getting married</p>
           <h1 className="ibz-names">
-            Chinwe
+            Tochukwu
             <span className="ibz-ampersand">&</span>
-            Emeka
+            Kasi
           </h1>
           <p className="ibz-date-line">Saturday, the Fourteenth of June · Two Thousand and Twenty-Five</p>
           <p className="ibz-hashtag">#TheIbezimakos</p>
@@ -268,16 +329,16 @@ export default function WeddingWebsite() {
             </h2>
             <Divider />
             <p className="ibz-body">
-              It started with a chance encounter neither of us planned for — and neither of us could ignore. 
-              Across continents, through residency shifts and red-eye flights, through laughter that echoed 
-              in tiny apartments and across oceans, we found in each other something neither of us knew we 
+              It started with a chance encounter neither of us planned for — and neither of us could ignore.
+              Across continents, through residency shifts and red-eye flights, through laughter that echoed
+              in tiny apartments and across oceans, we found in each other something neither of us knew we
               were looking for.
             </p>
             <blockquote className="ibz-pull-quote">
               "He showed up exactly when I'd stopped expecting anyone to."
             </blockquote>
             <p className="ibz-body">
-              Now, we stand at the beginning of everything — our first home, our shared name, 
+              Now, we stand at the beginning of everything — our first home, our shared name,
               our story told together. We are so grateful you'll be there to witness it.
             </p>
           </div>
@@ -449,8 +510,8 @@ export default function WeddingWebsite() {
               Getting<br /><em>here</em>
             </h2>
             <p className="ibz-body" style={{ marginTop: "1.5rem" }}>
-              Whether you're driving in from across town or flying in from abroad, 
-              we want your journey to be as seamless as the celebration itself. 
+              Whether you're driving in from across town or flying in from abroad,
+              we want your journey to be as seamless as the celebration itself.
               Below you'll find our curated recommendations for accommodation and travel.
             </p>
             <div style={{ marginTop: "2rem", padding: "1.5rem", border: `1px solid ${PALETTE.border}`, background: PALETTE.white }}>
@@ -486,8 +547,8 @@ export default function WeddingWebsite() {
           </h2>
           <Divider />
           <p className="ibz-body">
-            Your presence at our celebration is the greatest gift of all. But if you'd like to 
-            contribute to our new chapter, we've put together a few ways to be part of the 
+            Your presence at our celebration is the greatest gift of all. But if you'd like to
+            contribute to our new chapter, we've put together a few ways to be part of the
             beautiful life we're building together.
           </p>
         </div>
@@ -515,23 +576,7 @@ export default function WeddingWebsite() {
           <h2 className="ibz-social-title">Our Story, Unfiltered</h2>
           <p className="ibz-social-hashtag">#TheIbezimakos</p>
 
-          {/* Video embed placeholder */}
           <div className="ibz-video-frame">
-            {/* 
-              ── HOW TO EMBED YOUR VIDEO ──
-              Replace this entire div with one of the following:
-              
-              YouTube:
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-                gyroscope; picture-in-picture" allowFullScreen />
-              
-              TikTok (Save the Date vlog):
-              <blockquote className="tiktok-embed" cite="https://www.tiktok.com/@yourusername/video/YOUR_VIDEO_ID"
-                data-video-id="YOUR_VIDEO_ID" style={{maxWidth:"605px", minWidth:"325px"}}>
-              </blockquote>
-              <script async src="https://www.tiktok.com/embed.js"></script>
-            */}
             <div className="ibz-video-play">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 3 }}>
                 <polygon points="5 3 19 12 5 21 5 3" />
@@ -540,7 +585,6 @@ export default function WeddingWebsite() {
             <p className="ibz-video-label">Our Save the Date Vlog · Replace with YouTube or TikTok embed</p>
           </div>
 
-          {/* Social grid */}
           <div className="ibz-social-grid">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
               <div key={i} className="ibz-social-cell">
@@ -564,7 +608,7 @@ export default function WeddingWebsite() {
 
       {/* ── FOOTER ── */}
       <footer className="ibz-footer">
-        <p className="ibz-footer-names">Chinwe & Emeka Ibezimako</p>
+        <p className="ibz-footer-names">Tochukwu & Kasi Ibezimako</p>
         <p className="ibz-footer-date">14 · June · 2025</p>
         <p className="ibz-footer-tag">#TheIbezimakos</p>
       </footer>
