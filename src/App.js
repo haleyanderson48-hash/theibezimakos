@@ -279,7 +279,7 @@ export default function WeddingWebsite() {
           <div>
             <p className="ibz-section-label">Our Story</p>
             <h2 className="ibz-section-title">
-              Ten years in the making,<br />
+              A decade of love,<br />
               <em>a lifetime to go</em>
             </h2>
             <Divider />
