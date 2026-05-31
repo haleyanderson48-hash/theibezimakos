@@ -20,110 +20,97 @@ const FONTS = `
 const globalStyles = `
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { background: ${PALETTE.cream}; color: ${PALETTE.charcoal}; }
-  ::selection { background: ${PALETTE.goldLight}; color: ${PALETTE.charcoalMid}; }
+  body { background: #FAF8F3; color: #1E1E1E; }
+  ::selection { background: #D4BFA0; color: #3A3A3A; }
 
   .ibz-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 3rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.5s ease; }
-  .ibz-nav.scrolled { background: rgba(250,248,243,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid ${PALETTE.border}; padding: 0.875rem 3rem; }
+  .ibz-nav.scrolled { background: rgba(250,248,243,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid #E5DDD0; padding: 0.875rem 3rem; }
   .ibz-nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .ibz-nav-links a { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; color: ${PALETTE.charcoalMid}; transition: color 0.3s; }
-  .ibz-nav-links a:hover { color: ${PALETTE.gold}; }
-  .ibz-nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; letter-spacing: 0.08em; color: ${PALETTE.charcoal}; font-style: italic; }
+  .ibz-nav-links a { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; color: #3A3A3A; transition: color 0.3s; }
+  .ibz-nav-links a:hover { color: #B8976A; }
+  .ibz-nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; letter-spacing: 0.08em; color: #1E1E1E; font-style: italic; }
 
-  .ibz-hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: ${PALETTE.cream}; padding: 6rem 2rem 4rem; }
+  .ibz-hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: #FAF8F3; padding: 6rem 2rem 4rem; }
   .ibz-hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 60%, rgba(184,151,106,0.07) 0%, transparent 60%), radial-gradient(ellipse at 75% 20%, rgba(184,151,106,0.05) 0%, transparent 50%); pointer-events: none; }
-  .ibz-hero-photo { width: min(520px, 90vw); height: min(680px, 80vh); object-fit: cover; background: ${PALETTE.borderLight}; position: relative; overflow: hidden; filter: sepia(8%) brightness(1.02); }
-  .ibz-hero-photo-inner { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; color: ${PALETTE.muted}; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; border: 1px solid ${PALETTE.border}; }
-  .ibz-hero-content { text-align: center; margin-top: 3.5rem; }
-  .ibz-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: ${PALETTE.gold}; margin-bottom: 1.25rem; }
-  .ibz-names { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 400; line-height: 1.05; color: ${PALETTE.charcoal}; letter-spacing: -0.01em; }
-  .ibz-names em { font-style: italic; color: ${PALETTE.goldDark}; }
-  .ibz-ampersand { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 4rem); font-style: italic; font-weight: 300; color: ${PALETTE.goldLight}; display: block; line-height: 1; margin: 0.25rem 0; }
-  .ibz-date-line { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 300; letter-spacing: 0.12em; color: ${PALETTE.muted}; margin-top: 1.5rem; }
-  .ibz-hashtag { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; color: ${PALETTE.gold}; margin-top: 0.75rem; letter-spacing: 0.04em; }
+  .ibz-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: #B8976A; margin-bottom: 1.25rem; }
+  .ibz-names { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 400; line-height: 1.05; color: #1E1E1E; letter-spacing: -0.01em; }
+  .ibz-ampersand { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 4rem); font-style: italic; font-weight: 300; color: #D4BFA0; display: block; line-height: 1; margin: 0.25rem 0; }
+  .ibz-date-line { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 300; letter-spacing: 0.12em; color: #7A7468; margin-top: 1.5rem; }
+  .ibz-hashtag { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; color: #B8976A; margin-top: 0.75rem; letter-spacing: 0.04em; }
   .ibz-divider { display: flex; align-items: center; gap: 1.25rem; margin: 3.5rem auto; max-width: 260px; }
-  .ibz-divider-line { flex: 1; height: 1px; background: ${PALETTE.border}; }
-  .ibz-divider-ornament { width: 6px; height: 6px; border: 1px solid ${PALETTE.gold}; transform: rotate(45deg); flex-shrink: 0; }
+  .ibz-divider-line { flex: 1; height: 1px; background: #E5DDD0; }
+  .ibz-divider-ornament { width: 6px; height: 6px; border: 1px solid #B8976A; transform: rotate(45deg); flex-shrink: 0; }
 
   .ibz-section { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
-  .ibz-section-label { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: ${PALETTE.gold}; margin-bottom: 1rem; }
-  .ibz-section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; color: ${PALETTE.charcoal}; line-height: 1.15; margin-bottom: 0.5rem; }
+  .ibz-section-label { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: #B8976A; margin-bottom: 1rem; }
+  .ibz-section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; color: #1E1E1E; line-height: 1.15; margin-bottom: 0.5rem; }
   .ibz-section-title em { font-style: italic; }
-  .ibz-body { font-family: 'DM Sans', sans-serif; font-size: 1.0rem; font-weight: 300; color: ${PALETTE.muted}; line-height: 1.9; max-width: 580px; }
-  .ibz-rule { width: 100%; height: 1px; background: ${PALETTE.border}; margin: 0; }
+  .ibz-body { font-family: 'DM Sans', sans-serif; font-size: 1.0rem; font-weight: 300; color: #7A7468; line-height: 1.9; max-width: 580px; }
+  .ibz-rule { width: 100%; height: 1px; background: #E5DDD0; margin: 0; }
 
   .ibz-story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .ibz-story-photo { aspect-ratio: 3/4; background: ${PALETTE.borderLight}; border: 1px solid ${PALETTE.border}; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.75rem; color: ${PALETTE.muted}; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; filter: sepia(6%); }
-  .ibz-pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-style: italic; font-weight: 300; color: ${PALETTE.charcoalMid}; line-height: 1.5; border-left: 2px solid ${PALETTE.gold}; padding-left: 1.75rem; margin: 2.5rem 0; }
+  .ibz-pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-style: italic; font-weight: 300; color: #3A3A3A; line-height: 1.5; border-left: 2px solid #B8976A; padding-left: 1.75rem; margin: 2.5rem 0; }
 
   .ibz-details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
-  .ibz-detail-card { border: 1px solid ${PALETTE.border}; padding: 2.5rem; background: ${PALETTE.white}; position: relative; }
-  .ibz-detail-card::before { content: ''; position: absolute; top: 10px; left: 10px; right: -10px; bottom: -10px; border: 1px solid ${PALETTE.borderLight}; z-index: -1; }
-  .ibz-detail-type { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: ${PALETTE.gold}; margin-bottom: 1rem; }
-  .ibz-detail-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: ${PALETTE.charcoal}; margin-bottom: 1.25rem; }
-  .ibz-detail-info { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 300; color: ${PALETTE.muted}; line-height: 2; }
-  .ibz-detail-info strong { font-weight: 500; color: ${PALETTE.charcoalMid}; display: block; }
+  .ibz-detail-card { border: 1px solid #E5DDD0; padding: 2.5rem; background: #FFFFFF; position: relative; }
+  .ibz-detail-card::before { content: ''; position: absolute; top: 10px; left: 10px; right: -10px; bottom: -10px; border: 1px solid #F0EAE0; z-index: -1; }
+  .ibz-detail-type { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #B8976A; margin-bottom: 1rem; }
+  .ibz-detail-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: #1E1E1E; margin-bottom: 1.25rem; }
+  .ibz-detail-info { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 300; color: #7A7468; line-height: 2; }
+  .ibz-detail-info strong { font-weight: 500; color: #3A3A3A; display: block; }
 
-  .ibz-rsvp-wrap { background: ${PALETTE.white}; border: 1px solid ${PALETTE.border}; padding: 3.5rem; max-width: 700px; margin: 3rem auto 0; }
-  .ibz-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-  .ibz-form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-  .ibz-label { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: ${PALETTE.muted}; }
-  .ibz-input { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 300; color: ${PALETTE.charcoal}; border: none; border-bottom: 1px solid ${PALETTE.border}; background: transparent; padding: 0.6rem 0; outline: none; transition: border-color 0.3s; width: 100%; }
-  .ibz-input:focus { border-bottom-color: ${PALETTE.gold}; }
-  .ibz-select { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 300; color: ${PALETTE.charcoal}; border: none; border-bottom: 1px solid ${PALETTE.border}; background: transparent; padding: 0.6rem 0; outline: none; width: 100%; cursor: pointer; appearance: none; -webkit-appearance: none; }
-  .ibz-textarea { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 300; color: ${PALETTE.charcoal}; border: 1px solid ${PALETTE.border}; background: transparent; padding: 0.75rem 1rem; outline: none; resize: vertical; width: 100%; min-height: 100px; transition: border-color 0.3s; margin-bottom: 1.5rem; }
-  .ibz-textarea:focus { border-color: ${PALETTE.gold}; }
-  .ibz-btn { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; color: ${PALETTE.white}; background: ${PALETTE.charcoal}; border: none; padding: 1rem 3rem; cursor: pointer; transition: background 0.3s; width: 100%; }
-  .ibz-btn:hover { background: ${PALETTE.goldDark}; }
-  .ibz-rsvp-deadline { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: ${PALETTE.muted}; text-align: center; margin-top: 1.25rem; }
-
-  .ibz-travel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
-  .ibz-travel-card { padding: 2rem 1.75rem; border-top: 2px solid ${PALETTE.gold}; background: ${PALETTE.white}; }
-  .ibz-travel-icon { font-size: 1.5rem; margin-bottom: 1rem; }
-  .ibz-travel-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; color: ${PALETTE.charcoal}; margin-bottom: 0.5rem; }
-  .ibz-travel-detail { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 300; color: ${PALETTE.muted}; line-height: 1.75; }
-  .ibz-travel-link { display: inline-block; margin-top: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: ${PALETTE.gold}; text-decoration: none; border-bottom: 1px solid ${PALETTE.goldLight}; padding-bottom: 2px; transition: color 0.3s, border-color 0.3s; }
-  .ibz-travel-link:hover { color: ${PALETTE.goldDark}; border-color: ${PALETTE.goldDark}; }
+  .ibz-rsvp-wrap { background: #FFFFFF; border: 1px solid #E5DDD0; padding: 3.5rem; max-width: 700px; margin: 3rem auto 0; }
+  .ibz-form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .ibz-label { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: #7A7468; }
+  .ibz-input { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 300; color: #1E1E1E; border: none; border-bottom: 1px solid #E5DDD0; background: transparent; padding: 0.6rem 0; outline: none; transition: border-color 0.3s; width: 100%; }
+  .ibz-input:focus { border-bottom-color: #B8976A; }
+  .ibz-select { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 300; color: #1E1E1E; border: none; border-bottom: 1px solid #E5DDD0; background: transparent; padding: 0.6rem 0; outline: none; width: 100%; cursor: pointer; appearance: none; -webkit-appearance: none; }
+  .ibz-textarea { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 300; color: #1E1E1E; border: 1px solid #E5DDD0; background: transparent; padding: 0.75rem 1rem; outline: none; resize: vertical; width: 100%; min-height: 100px; transition: border-color 0.3s; margin-bottom: 1.5rem; }
+  .ibz-textarea:focus { border-color: #B8976A; }
+  .ibz-btn { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; color: #FFFFFF; background: #1E1E1E; border: none; padding: 1rem 3rem; cursor: pointer; transition: background 0.3s; width: 100%; }
+  .ibz-btn:hover { background: #8C6E48; }
+  .ibz-rsvp-deadline { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: #7A7468; text-align: center; margin-top: 1.25rem; }
+  .ibz-small-wedding-note { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: #B8976A; text-align: center; margin-top: 1rem; border: 1px solid #E5DDD0; padding: 1rem 1.5rem; background: #FAF8F3; }
 
   .ibz-registry-intro { text-align: center; margin-bottom: 3.5rem; }
   .ibz-registry-intro .ibz-body { margin: 0 auto; text-align: center; }
   .ibz-registry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .ibz-registry-card { border: 1px solid ${PALETTE.border}; padding: 2.25rem 1.75rem; background: ${PALETTE.white}; cursor: pointer; transition: all 0.35s; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-  .ibz-registry-card:hover { border-color: ${PALETTE.gold}; background: ${PALETTE.cream}; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(184,151,106,0.12); }
-  .ibz-registry-symbol { width: 52px; height: 52px; border: 1px solid ${PALETTE.border}; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
-  .ibz-registry-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 400; color: ${PALETTE.charcoal}; }
-  .ibz-registry-desc { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 300; color: ${PALETTE.muted}; line-height: 1.7; }
-  .ibz-registry-cta { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: ${PALETTE.gold}; margin-top: auto; }
+  .ibz-registry-card { border: 1px solid #E5DDD0; padding: 2.25rem 1.75rem; background: #FFFFFF; cursor: pointer; transition: all 0.35s; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .ibz-registry-card:hover { border-color: #B8976A; background: #FAF8F3; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(184,151,106,0.12); }
+  .ibz-registry-symbol { width: 52px; height: 52px; border: 1px solid #E5DDD0; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+  .ibz-registry-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 400; color: #1E1E1E; }
+  .ibz-registry-desc { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 300; color: #7A7468; line-height: 1.7; }
+  .ibz-registry-cta { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #B8976A; margin-top: auto; }
 
-  .ibz-social-wrap { background: ${PALETTE.charcoal}; padding: 6rem 2rem; text-align: center; }
-  .ibz-social-inner { max-width: 860px; margin: 0 auto; }
-  .ibz-social-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: ${PALETTE.goldLight}; margin-bottom: 1rem; }
-  .ibz-social-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 4rem); font-weight: 400; font-style: italic; color: ${PALETTE.white}; margin-bottom: 1rem; }
-  .ibz-social-hashtag { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: ${PALETTE.goldLight}; letter-spacing: 0.06em; margin-bottom: 2.5rem; }
+  .ibz-photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+  .ibz-photo-cell { aspect-ratio: 1; background: #F0EAE0; border: 1px solid #E5DDD0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; overflow: hidden; }
+  .ibz-photo-cell img { width: 100%; height: 100%; object-fit: cover; filter: sepia(5%) brightness(1.02); }
+  .ibz-photo-placeholder-text { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: #D4BFA0; text-align: center; padding: 0 1rem; }
+
+  .ibz-social-wrap { background: #1E1E1E; padding: 6rem 2rem; text-align: center; }
+  .ibz-social-inner { max-width: 960px; margin: 0 auto; }
+  .ibz-social-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: #D4BFA0; margin-bottom: 1rem; }
+  .ibz-social-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 4rem); font-weight: 400; font-style: italic; color: #FFFFFF; margin-bottom: 1rem; }
+  .ibz-social-hashtag { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: #D4BFA0; letter-spacing: 0.06em; margin-bottom: 2.5rem; }
   .ibz-video-frame { width: 100%; aspect-ratio: 16/9; background: #111; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; }
   .ibz-video-play { width: 64px; height: 64px; border: 1.5px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
   .ibz-video-label { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
   .ibz-social-note { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.8; }
-  .ibz-social-note code { font-family: inherit; color: ${PALETTE.goldLight}; }
-  .ibz-social-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-top: 2.5rem; }
-  .ibz-social-cell { aspect-ratio: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; }
-  .ibz-social-cell-label { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.2); }
+  .ibz-social-note code { font-family: inherit; color: #D4BFA0; }
 
-  .ibz-footer { padding: 3.5rem 2rem; background: ${PALETTE.cream}; border-top: 1px solid ${PALETTE.border}; text-align: center; }
-  .ibz-footer-names { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: ${PALETTE.charcoal}; margin-bottom: 0.5rem; }
-  .ibz-footer-date { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: ${PALETTE.muted}; margin-bottom: 0.5rem; }
-  .ibz-footer-tag { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: ${PALETTE.gold}; }
+  .ibz-footer { padding: 3.5rem 2rem; background: #FAF8F3; border-top: 1px solid #E5DDD0; text-align: center; }
+  .ibz-footer-names { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: #1E1E1E; margin-bottom: 0.5rem; }
+  .ibz-footer-date { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #7A7468; margin-bottom: 0.5rem; }
+  .ibz-footer-tag { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: #B8976A; }
 
   @media (max-width: 768px) {
     .ibz-nav { padding: 1rem 1.25rem; }
     .ibz-nav.scrolled { padding: 0.75rem 1.25rem; }
     .ibz-nav-links { display: none; }
-    .ibz-story-grid, .ibz-details-grid, .ibz-travel-grid, .ibz-registry-grid, .ibz-social-grid { grid-template-columns: 1fr; }
-    .ibz-registry-grid { grid-template-columns: 1fr 1fr; }
-    .ibz-form-row { grid-template-columns: 1fr; }
-    .ibz-rsvp-wrap { padding: 2rem 1.25rem; }
+    .ibz-story-grid, .ibz-details-grid, .ibz-registry-grid { grid-template-columns: 1fr; }
+    .ibz-photo-grid { grid-template-columns: repeat(2, 1fr); }
     .ibz-section { padding: 4rem 1.25rem; }
-    .ibz-social-grid { grid-template-columns: repeat(2, 1fr); }
+    .ibz-rsvp-wrap { padding: 2rem 1.25rem; }
   }
 `;
 
@@ -137,35 +124,16 @@ function Divider() {
   );
 }
 
-function PhotoPlaceholder({ label, caption, aspect, style = {} }) {
+function PhotoPlaceholder({ label, caption, style = {} }) {
   return (
-    <div
-      style={{
-        aspectRatio: aspect || "3/4",
-        background: PALETTE.borderLight,
-        border: `1px solid ${PALETTE.border}`,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        gap: "0.75rem",
-        filter: "sepia(5%) brightness(1.02)",
-        ...style,
-      }}
-    >
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={PALETTE.border} strokeWidth="1.2">
+    <div style={{ background: "#F0EAE0", border: "1px solid #E5DDD0", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "0.75rem", filter: "sepia(5%) brightness(1.02)", ...style }}>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E5DDD0" strokeWidth="1.2">
         <rect x="3" y="3" width="18" height="18" rx="1" />
         <circle cx="8.5" cy="8.5" r="1.5" />
         <polyline points="21 15 16 10 5 21" />
       </svg>
-      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.2em", textTransform: "uppercase", color: PALETTE.muted, textAlign: "center", padding: "0 1rem" }}>
-        {label}
-      </span>
-      {caption && (
-        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.88rem", fontStyle: "italic", color: PALETTE.goldLight, textAlign: "center", padding: "0 1rem" }}>
-          {caption}
-        </span>
-      )}
+      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#D4BFA0", textAlign: "center", padding: "0 1rem" }}>{label}</span>
+      {caption && <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.88rem", fontStyle: "italic", color: "#D4BFA0", textAlign: "center", padding: "0 1rem" }}>{caption}</span>}
     </div>
   );
 }
@@ -186,18 +154,18 @@ function PasswordGate({ onUnlock }) {
   return (
     <>
       <style>{FONTS}</style>
-      <div style={{ minHeight: "100vh", background: PALETTE.cream, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", padding: "2rem" }}>
-        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 400, color: PALETTE.charcoal, marginBottom: "0.5rem", textAlign: "center" }}>
-          Tochukwu <span style={{ fontStyle: "italic", color: PALETTE.gold }}>&</span> Kasi
+      <div style={{ minHeight: "100vh", background: "#FAF8F3", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", padding: "2rem" }}>
+        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 400, color: "#1E1E1E", marginBottom: "0.5rem", textAlign: "center" }}>
+          Kasi <span style={{ fontStyle: "italic", color: "#B8976A" }}>&</span> Tochukwu
         </p>
-        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.1rem", fontWeight: 300, color: PALETTE.muted, letterSpacing: "0.1em", marginBottom: "0.5rem" }}>
+        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.1rem", fontWeight: 300, color: "#7A7468", letterSpacing: "0.1em", marginBottom: "0.5rem" }}>
           This page is private
         </p>
-        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1rem", fontStyle: "italic", color: PALETTE.gold, marginBottom: "2.5rem" }}>
+        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1rem", fontStyle: "italic", color: "#B8976A", marginBottom: "2.5rem" }}>
           #TheIbezimakos
         </p>
-        <div style={{ width: "min(420px, 90vw)", border: `1px solid ${PALETTE.border}`, background: PALETTE.white, padding: "2.5rem" }}>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.3em", textTransform: "uppercase", color: PALETTE.muted, marginBottom: "1.5rem", textAlign: "center" }}>
+        <div style={{ width: "min(420px, 90vw)", border: "1px solid #E5DDD0", background: "#FFFFFF", padding: "2.5rem" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.3em", textTransform: "uppercase", color: "#7A7468", marginBottom: "1.5rem", textAlign: "center" }}>
             Enter your invitation code
           </p>
           <input
@@ -206,21 +174,18 @@ function PasswordGate({ onUnlock }) {
             value={code}
             onChange={e => setCode(e.target.value)}
             onKeyDown={e => e.key === "Enter" && handleSubmit()}
-            style={{ width: "100%", fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", fontWeight: 300, border: "none", borderBottom: `1px solid ${error ? "#c0392b" : PALETTE.border}`, background: "transparent", padding: "0.6rem 0", outline: "none", textAlign: "center", letterSpacing: "0.2em", marginBottom: "1.5rem", color: PALETTE.charcoal }}
+            style={{ width: "100%", fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", fontWeight: 300, border: "none", borderBottom: `1px solid ${error ? "#c0392b" : "#E5DDD0"}`, background: "transparent", padding: "0.6rem 0", outline: "none", textAlign: "center", letterSpacing: "0.2em", marginBottom: "1.5rem", color: "#1E1E1E" }}
           />
           {error && (
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.95rem", fontStyle: "italic", color: "#c0392b", textAlign: "center", marginBottom: "1rem" }}>
               Incorrect code — please try again
             </p>
           )}
-          <button
-            onClick={handleSubmit}
-            style={{ width: "100%", fontFamily: "'DM Sans', sans-serif", fontSize: "0.72rem", letterSpacing: "0.25em", textTransform: "uppercase", fontWeight: 500, color: PALETTE.white, background: PALETTE.charcoal, border: "none", padding: "1rem", cursor: "pointer" }}
-          >
+          <button onClick={handleSubmit} style={{ width: "100%", fontFamily: "'DM Sans', sans-serif", fontSize: "0.72rem", letterSpacing: "0.25em", textTransform: "uppercase", fontWeight: 500, color: "#FFFFFF", background: "#1E1E1E", border: "none", padding: "1rem", cursor: "pointer" }}>
             Enter
           </button>
         </div>
-        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.9rem", fontStyle: "italic", color: PALETTE.goldLight, marginTop: "2rem" }}>
+        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.9rem", fontStyle: "italic", color: "#D4BFA0", marginTop: "2rem" }}>
           Code can be found on your invitation
         </p>
       </div>
@@ -232,7 +197,7 @@ export default function WeddingWebsite() {
   const [unlocked, setUnlocked] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ name: "", partner: "", guests: "2", attending: "yes", meal: "", dietary: "", notes: "" });
+  const [formData, setFormData] = useState({ name: "", attending: "yes", notes: "" });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -244,6 +209,8 @@ export default function WeddingWebsite() {
 
   const handleRsvp = () => {
     if (formData.name.trim()) {
+      // Send to Notion form
+      window.open("https://www.notion.so/36e573a5dfd680c4a6dbe4b973f9b567?pvs=106", "_blank");
       setRsvpSubmitted(true);
     }
   };
@@ -258,101 +225,100 @@ export default function WeddingWebsite() {
   ];
 
   const registryCards = [
-    { symbol: "🏠", title: "Our First Home", desc: "Help us build the foundation of our life together — from artwork to furniture that will fill our home with love.", cta: "Contribute →", href: "#" },
-    { symbol: "✈️", title: "Honeymoon Escapes", desc: "Send us on an unforgettable first adventure as a married couple. Every contribution counts.", cta: "Fund a moment →", href: "#" },
-    { symbol: "🍽️", title: "Anniversary Dinners", desc: "Pre-fund our first dozen anniversary dinner dates — the memories we'll make year after year.", cta: "Book us a table →", href: "#" },
-    { symbol: "🛁", title: "Home Luxuries", desc: "Elevate our everyday rituals with beautiful linens, cookware, and the details that make a house a home.", cta: "Shop registry →", href: "#" },
-    { symbol: "📚", title: "Our Library", desc: "Books, subscriptions, and art — for the couple who loves to keep growing together.", cta: "Add to our shelf →", href: "#" },
-    { symbol: "💛", title: "Open Gift", desc: "No preference? Give what feels right. We are grateful for your love and presence above all.", cta: "Give freely →", href: "#" },
+    { symbol: "🏠", title: "Our First Home", desc: "Help us lay the foundation of our life together — from the art on our walls to the table where we'll share every meal.", cta: "Contribute →", href: "#" },
+    { symbol: "💛", title: "Open Gift", desc: "No preference? Simply give what feels right. Your love, your presence, and your blessing mean more than any gift ever could.", cta: "Give freely →", href: "#" },
+    { symbol: "✈️", title: "Honeymoon Escapes", desc: "Send us on our first adventure as husband and wife. Every contribution becomes a memory we'll carry forever.", cta: "Fund a moment →", href: "#" },
   ];
 
-  const hotels = [
-    { name: "The Grand Palais Hotel", detail: "Preferred partner · 10% guest discount\n5 min from venue · Valet parking\nBook with code IBEZIMAKO25", link: "Reserve your room", href: "#" },
-    { name: "The Ardmore Suites", detail: "Boutique luxury · 0.3 miles away\nSuites & connecting rooms available\nIdeal for families & long stays", link: "View availability", href: "#" },
-    { name: "The Meridian", detail: "Contemporary & chic · 0.8 miles\nLively bar & rooftop lounge\nAsk about the wedding block rate", link: "Check rates", href: "#" },
-  ];
+  const photosGrid = [1, 2, 3, 4, 5, 6];
 
   return (
     <>
       <style>{FONTS}</style>
       <style>{globalStyles}</style>
 
-      {/* ── NAVIGATION ── */}
+      {/* NAV */}
       <nav className={`ibz-nav ${scrolled ? "scrolled" : ""}`}>
-        <span className="ibz-nav-logo">T & K</span>
+        <span className="ibz-nav-logo">K & T</span>
         <ul className="ibz-nav-links">
           {navLinks.map((l) => (
-            <li key={l.href}>
-              <a href={l.href}>{l.label}</a>
-            </li>
+            <li key={l.href}><a href={l.href}>{l.label}</a></li>
           ))}
         </ul>
       </nav>
 
-      {/* ── HERO ── */}
+      {/* HERO */}
       <section className="ibz-hero">
         <div className="ibz-hero-bg" />
         <PhotoPlaceholder
-          label="Your hero portrait · replace with /images/hero.jpg"
+          label="Your hero portrait · replace with your photo"
           caption="Long-sleeved v-neck gown · editorial detail shot"
-          style={{ width: "min(520px, 90vw)", height: "min(680px, 80vh)", aspectRatio: "unset" }}
+          style={{ width: "min(520px, 90vw)", height: "min(680px, 80vh)" }}
         />
-
-        <div className="ibz-hero-content">
+        <div className="ibz-hero-content" style={{ textAlign: "center", marginTop: "3.5rem" }}>
           <p className="ibz-eyebrow">We are getting married</p>
           <h1 className="ibz-names">
-            Tochukwu
-            <span className="ibz-ampersand">&</span>
             Kasi
+            <span className="ibz-ampersand">&</span>
+            Tochukwu
           </h1>
-          <p className="ibz-date-line">Saturday, the Fourteenth of June · Two Thousand and Twenty-Five</p>
+          <p className="ibz-date-line">Friday, the Fifteenth of May · Two Thousand and Twenty-Seven</p>
           <p className="ibz-hashtag">#TheIbezimakos</p>
         </div>
-
         <Divider />
-
-        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.1rem", fontStyle: "italic", fontWeight: 300, color: PALETTE.muted, letterSpacing: "0.06em" }}>
-          Lagos · London · Forever
+        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.1rem", fontStyle: "italic", fontWeight: 300, color: "#7A7468", letterSpacing: "0.06em" }}>
+          Maryland, USA · Forever
         </p>
       </section>
 
       <div className="ibz-rule" />
 
-      {/* ── OUR STORY ── */}
+      {/* OUR STORY */}
       <section className="ibz-section" id="story">
         <div className="ibz-story-grid">
           <div>
             <p className="ibz-section-label">Our Story</p>
             <h2 className="ibz-section-title">
-              Two lives,<br />
-              <em>one beautiful collision</em>
+              Ten years in the making,<br />
+              <em>a lifetime to go</em>
             </h2>
             <Divider />
-            <p className="ibz-body">
-              It started with a chance encounter neither of us planned for — and neither of us could ignore.
-              Across continents, through residency shifts and red-eye flights, through laughter that echoed
-              in tiny apartments and across oceans, we found in each other something neither of us knew we
-              were looking for.
+            <p className="ibz-body" style={{ marginBottom: "1.5rem" }}>
+              It started the way the best stories always do — unexpectedly, in the middle of ordinary life. 
+              We met in undergrad, two people with no idea what they were walking into. Our first date was 
+              at Cold Stone in Bowie, Maryland. Simple. Sweet. Completely unforgettable.
             </p>
             <blockquote className="ibz-pull-quote">
-              "He showed up exactly when I'd stopped expecting anyone to."
+              "The first time Tochukwu met my mom, he told her he was going to marry me."
             </blockquote>
+            <p className="ibz-body" style={{ marginBottom: "1.5rem" }}>
+              He wasn't nervous. He wasn't joking. He was just — sure. That was nearly ten years ago, 
+              and he has never once wavered. While Kasi chased her calling through medical school and 
+              residency, Tochukwu followed — across cities, across time zones, through every long shift 
+              and sleepless night. He helped her move, more times than either of them would like to count. 
+              He showed up, quietly and completely, every single time.
+            </p>
+            <p className="ibz-body" style={{ marginBottom: "1.5rem" }}>
+              The proposal came in the Bahamas, just after residency — or so the official story goes 😉 
+              Under open skies, with the ocean as their witness, he asked the question he had already 
+              answered a decade before.
+            </p>
             <p className="ibz-body">
-              Now, we stand at the beginning of everything — our first home, our shared name,
-              our story told together. We are so grateful you'll be there to witness it.
+              Now, on May 15th 2027, they stand at the beginning of everything they have always been 
+              building toward. And they cannot wait to celebrate it with the people they love most.
             </p>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             <PhotoPlaceholder
-              label="Photo 1 · early days portrait"
+              label="Early days · undergrad"
               caption="Replace with /images/story-01.jpg"
-              aspect="4/3"
+              style={{ aspectRatio: "4/3" }}
             />
             <PhotoPlaceholder
-              label="Photo 2 · proposal / milestone"
+              label="The Bahamas · proposal"
               caption="Replace with /images/story-02.jpg"
-              aspect="4/3"
+              style={{ aspectRatio: "4/3" }}
             />
           </div>
         </div>
@@ -360,12 +326,10 @@ export default function WeddingWebsite() {
 
       <div className="ibz-rule" />
 
-      {/* ── THE DETAILS ── */}
+      {/* THE DETAILS */}
       <section className="ibz-section" id="details" style={{ textAlign: "center" }}>
         <p className="ibz-section-label">The Details</p>
-        <h2 className="ibz-section-title">
-          <em>Join us</em> for the celebration
-        </h2>
+        <h2 className="ibz-section-title"><em>Join us</em> for the celebration</h2>
 
         <div className="ibz-details-grid" style={{ textAlign: "left" }}>
           <div className="ibz-detail-card">
@@ -373,15 +337,12 @@ export default function WeddingWebsite() {
             <h3 className="ibz-detail-title">The Exchange of Vows</h3>
             <div className="ibz-detail-info">
               <strong>Date & Time</strong>
-              Saturday, 14th June 2025 · 2:00 PM
-              <strong style={{ marginTop: "1rem" }}>Venue</strong>
-              [Ceremony Venue Name]<br />
-              [Full Address Line 1]<br />
-              [City, State · ZIP]
+              Friday, 15th May 2027 · Time TBD
+              <strong style={{ marginTop: "1rem" }}>Location</strong>
+              Maryland, USA<br />
+              Venue details to follow
               <strong style={{ marginTop: "1rem" }}>Attire</strong>
-              Black Tie Optional · Celebratory & festive
-              <strong style={{ marginTop: "1rem" }}>Parking</strong>
-              Complimentary valet available on site
+              Black Tie · Celebratory & festive
             </div>
           </div>
 
@@ -390,76 +351,64 @@ export default function WeddingWebsite() {
             <h3 className="ibz-detail-title">The Celebration Dinner</h3>
             <div className="ibz-detail-info">
               <strong>Time</strong>
-              Cocktail Hour · 4:30 PM<br />
-              Dinner & Dancing · 6:00 PM
-              <strong style={{ marginTop: "1rem" }}>Venue</strong>
-              [Reception Venue Name]<br />
-              [Full Address Line 1]<br />
-              [City, State · ZIP]
+              Cocktail Hour & Dinner to follow
+              <strong style={{ marginTop: "1rem" }}>Location</strong>
+              Maryland, USA<br />
+              Venue details to follow
               <strong style={{ marginTop: "1rem" }}>Note</strong>
-              An Afrobeats & R&B dance floor awaits you.<br />
-              Come ready to celebrate.
+              An Afrobeats & R&B dance floor awaits.<br />
+              Come ready to celebrate all night.
             </div>
           </div>
         </div>
 
         <div style={{ marginTop: "3rem" }}>
           <PhotoPlaceholder
-            label="Venue or detail shot · replace with /images/venue.jpg"
-            caption="Dress detail — long sleeves · v-neckline · back ruffles"
-            aspect="21/9"
-            style={{ maxWidth: "100%", aspectRatio: "21/9" }}
+            label="Venue photo · coming soon"
+            caption="Replace with /images/venue.jpg"
+            style={{ width: "100%", aspectRatio: "21/9" }}
           />
         </div>
       </section>
 
       <div className="ibz-rule" />
 
-      {/* ── RSVP ── */}
+      {/* RSVP */}
       <section className="ibz-section" id="rsvp" style={{ textAlign: "center" }}>
         <p className="ibz-section-label">RSVP</p>
         <h2 className="ibz-section-title"><em>Will you join us?</em></h2>
         <p className="ibz-body" style={{ margin: "0.75rem auto 0" }}>
-          Kindly respond by 1st May 2025. We cannot wait to celebrate with you.
+          Kindly respond by February 15th, 2027 — at least three months before the big day, 
+          so we can make sure everything is absolutely perfect.
         </p>
 
         <div className="ibz-rsvp-wrap">
+          <div className="ibz-small-wedding-note">
+            🕊️ Our celebration is an intimate affair. We kindly ask that each guest RSVPs individually — 
+            this one is just for you, with love.
+          </div>
+
           {rsvpSubmitted ? (
             <div style={{ padding: "2rem 0", textAlign: "center" }}>
-              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", fontStyle: "italic", color: PALETTE.charcoal, marginBottom: "1rem" }}>
+              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", fontStyle: "italic", color: "#1E1E1E", marginBottom: "1rem" }}>
                 We'll see you there 🥂
               </div>
               <p className="ibz-body" style={{ margin: "0 auto", textAlign: "center" }}>
                 Thank you, {formData.name}. Your RSVP has been received.<br />
-                Check your inbox for a confirmation note from us.
+                We cannot wait to celebrate with you.
               </p>
-              <div style={{ marginTop: "2rem", fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", fontStyle: "italic", color: PALETTE.gold }}>
+              <div style={{ marginTop: "2rem", fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", fontStyle: "italic", color: "#B8976A" }}>
                 #TheIbezimakos
               </div>
             </div>
           ) : (
             <>
-              <div className="ibz-form-row">
+              <div style={{ marginTop: "2rem" }}>
                 <div className="ibz-form-group">
                   <label className="ibz-label">Your Full Name</label>
                   <input className="ibz-input" type="text" placeholder="First & Last name" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} />
                 </div>
-                <div className="ibz-form-group">
-                  <label className="ibz-label">Guest / Partner Name</label>
-                  <input className="ibz-input" type="text" placeholder="If bringing a guest" value={formData.partner} onChange={e => setFormData({ ...formData, partner: e.target.value })} />
-                </div>
-              </div>
 
-              <div className="ibz-form-row">
-                <div className="ibz-form-group">
-                  <label className="ibz-label">Number of Guests</label>
-                  <select className="ibz-select" value={formData.guests} onChange={e => setFormData({ ...formData, guests: e.target.value })}>
-                    <option value="1">1 — Just me</option>
-                    <option value="2">2 — Plus one</option>
-                    <option value="3">3 guests</option>
-                    <option value="4">4 guests</option>
-                  </select>
-                </div>
                 <div className="ibz-form-group">
                   <label className="ibz-label">Will you attend?</label>
                   <select className="ibz-select" value={formData.attending} onChange={e => setFormData({ ...formData, attending: e.target.value })}>
@@ -467,33 +416,17 @@ export default function WeddingWebsite() {
                     <option value="no">Regretfully declines</option>
                   </select>
                 </div>
-              </div>
 
-              <div className="ibz-form-row">
                 <div className="ibz-form-group">
-                  <label className="ibz-label">Meal Preference</label>
-                  <select className="ibz-select" value={formData.meal} onChange={e => setFormData({ ...formData, meal: e.target.value })}>
-                    <option value="">Select preference</option>
-                    <option value="chicken">Herb-roasted Chicken</option>
-                    <option value="fish">Pan-seared Salmon</option>
-                    <option value="veg">Roasted Vegetable Wellington</option>
-                  </select>
+                  <label className="ibz-label">A note for us (optional)</label>
+                  <textarea className="ibz-textarea" placeholder="A well-wish, a memory, a song request..." value={formData.notes} onChange={e => setFormData({ ...formData, notes: e.target.value })} />
                 </div>
-                <div className="ibz-form-group">
-                  <label className="ibz-label">Dietary Requirements</label>
-                  <input className="ibz-input" type="text" placeholder="Allergies, restrictions..." value={formData.dietary} onChange={e => setFormData({ ...formData, dietary: e.target.value })} />
-                </div>
-              </div>
 
-              <div className="ibz-form-group" style={{ marginBottom: "1.5rem" }}>
-                <label className="ibz-label">A note for us (optional)</label>
-                <textarea className="ibz-textarea" placeholder="Share a well-wish, a memory, or a song request..." value={formData.notes} onChange={e => setFormData({ ...formData, notes: e.target.value })} />
+                <button className="ibz-btn" onClick={handleRsvp}>
+                  Send my RSVP
+                </button>
+                <p className="ibz-rsvp-deadline">Kindly respond by February 15th, 2027</p>
               </div>
-
-              <button className="ibz-btn" onClick={handleRsvp}>
-                Send my RSVP
-              </button>
-              <p className="ibz-rsvp-deadline">Kindly respond by May 1st, 2025</p>
             </>
           )}
         </div>
@@ -501,55 +434,58 @@ export default function WeddingWebsite() {
 
       <div className="ibz-rule" />
 
-      {/* ── TRAVEL & STAY ── */}
+      {/* TRAVEL */}
       <section className="ibz-section" id="travel">
         <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "4rem", alignItems: "start" }}>
           <div>
             <p className="ibz-section-label">Travel & Stay</p>
-            <h2 className="ibz-section-title">
-              Getting<br /><em>here</em>
-            </h2>
+            <h2 className="ibz-section-title">Getting<br /><em>here</em></h2>
             <p className="ibz-body" style={{ marginTop: "1.5rem" }}>
-              Whether you're driving in from across town or flying in from abroad,
-              we want your journey to be as seamless as the celebration itself.
-              Below you'll find our curated recommendations for accommodation and travel.
+              Whether you're driving in from across the DMV or flying in from abroad, 
+              we want your journey here to be as smooth as the celebration itself. 
+              Hotel recommendations and travel details will be shared once our venue is confirmed.
             </p>
-            <div style={{ marginTop: "2rem", padding: "1.5rem", border: `1px solid ${PALETTE.border}`, background: PALETTE.white }}>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.2em", textTransform: "uppercase", color: PALETTE.gold, marginBottom: "0.75rem" }}>Nearest Airports</p>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.88rem", fontWeight: 300, color: PALETTE.muted, lineHeight: 2 }}>
-                [Airport Name 1] · 25 min<br />
-                [Airport Name 2] · 45 min<br />
-                Rideshare & car rental available
+            <div style={{ marginTop: "2rem", padding: "1.5rem", border: "1px solid #E5DDD0", background: "#FFFFFF" }}>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#B8976A", marginBottom: "0.75rem" }}>Nearest Airports</p>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.88rem", fontWeight: 300, color: "#7A7468", lineHeight: 2 }}>
+                Ronald Reagan Washington National (DCA)<br />
+                Baltimore/Washington International (BWI)<br />
+                Washington Dulles International (IAD)
               </p>
             </div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", paddingTop: "2.5rem" }}>
-            {hotels.map((h) => (
-              <div key={h.name} className="ibz-travel-card">
-                <p className="ibz-travel-name">{h.name}</p>
-                <p className="ibz-travel-detail" style={{ whiteSpace: "pre-line" }}>{h.detail}</p>
-                <a href={h.href} className="ibz-travel-link">{h.link}</a>
-              </div>
-            ))}
+          <div style={{ paddingTop: "2.5rem" }}>
+            <div style={{ padding: "2rem 1.75rem", borderTop: "2px solid #B8976A", background: "#FFFFFF", marginBottom: "1.5rem" }}>
+              <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.2rem", color: "#1E1E1E", marginBottom: "0.5rem" }}>Hotel Recommendations</p>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", fontWeight: 300, color: "#7A7468", lineHeight: 1.75 }}>
+                Our curated hotel list will be available once the venue is confirmed. 
+                Check back soon — we'll make sure our guests are well taken care of!
+              </p>
+            </div>
+            <div style={{ padding: "2rem 1.75rem", borderTop: "2px solid #B8976A", background: "#FFFFFF" }}>
+              <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.2rem", color: "#1E1E1E", marginBottom: "0.5rem" }}>Questions?</p>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", fontWeight: 300, color: "#7A7468", lineHeight: 1.75 }}>
+                Reach out to us directly and we'll be happy to help with anything you need to make your trip seamless.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <div className="ibz-rule" />
 
-      {/* ── GIFTS & REGISTRY ── */}
+      {/* GIFTS */}
       <section className="ibz-section" id="gifts">
         <div className="ibz-registry-intro">
           <p className="ibz-section-label">New Beginnings</p>
-          <h2 className="ibz-section-title" style={{ textAlign: "center" }}>
-            <em>Gifts & Registry</em>
-          </h2>
+          <h2 className="ibz-section-title" style={{ textAlign: "center" }}><em>Gifts & Registry</em></h2>
           <Divider />
-          <p className="ibz-body">
-            Your presence at our celebration is the greatest gift of all. But if you'd like to
-            contribute to our new chapter, we've put together a few ways to be part of the
-            beautiful life we're building together.
+          <p className="ibz-body" style={{ textAlign: "center", margin: "0 auto" }}>
+            Honestly? Your presence at our wedding is the only gift we could ever ask for. 
+            Having the people we love most in the same room as we say "I do" — that is everything. 
+            But if your heart is feeling generous and you'd like to celebrate this new chapter with us, 
+            we've put together a few ways to be a part of the beautiful life we're building together. 💛
           </p>
         </div>
 
@@ -564,52 +500,71 @@ export default function WeddingWebsite() {
           ))}
         </div>
 
-        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", fontStyle: "italic", color: PALETTE.muted, textAlign: "center", marginTop: "2.5rem" }}>
-          No box is required. Your love and presence mean the world to us.
+        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", fontStyle: "italic", color: "#7A7468", textAlign: "center", marginTop: "2.5rem" }}>
+          No box required. Just bring your dancing shoes and your love.
         </p>
       </section>
 
-      {/* ── SOCIAL HUB ── */}
+      {/* SOCIAL / MEMORIES */}
       <section className="ibz-social-wrap" id="social">
         <div className="ibz-social-inner">
-          <p className="ibz-social-eyebrow">Follow our journey</p>
-          <h2 className="ibz-social-title">Our Story, Unfiltered</h2>
+          <p className="ibz-social-eyebrow">A decade of memories</p>
+          <h2 className="ibz-social-title">Us, Through the Years</h2>
           <p className="ibz-social-hashtag">#TheIbezimakos</p>
 
-          <div className="ibz-video-frame">
-            <div className="ibz-video-play">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 3 }}>
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg>
-            </div>
-            <p className="ibz-video-label">Our Save the Date Vlog · Replace with YouTube or TikTok embed</p>
-          </div>
-
-          <div className="ibz-social-grid">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <div key={i} className="ibz-social-cell">
-                <span className="ibz-social-cell-label">
-                  {i === 1 ? "Photo" : i === 2 ? "Video" : i === 3 ? "Reel" : i === 5 ? "Vlog" : "#"}
-                </span>
+          {/* Photo grid */}
+          <div className="ibz-photo-grid">
+            {photosGrid.map((i) => (
+              <div key={i} className="ibz-photo-cell">
+                {/* Replace each div below with: <img src="/images/memory-0X.jpg" alt="Kasi and Tochukwu" /> */}
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.2">
+                  <rect x="3" y="3" width="18" height="18" rx="1" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+                <span className="ibz-photo-placeholder-text">Memory {i} · add your photo</span>
               </div>
             ))}
           </div>
 
-          <p className="ibz-social-note" style={{ marginTop: "2.5rem" }}>
-            Share your photos & videos with the tag{" "}
-            <code>#TheIbezimakos</code>{" "}
-            and they may appear right here on our wedding website.
-            <br />
-            Follow us on Instagram & TikTok{" "}
-            <code>@[yourhandle]</code>
+          {/* Video section */}
+          <div style={{ marginTop: "3rem" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.65rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "#D4BFA0", marginBottom: "1.25rem" }}>Our latest</p>
+            <div className="ibz-video-frame">
+              {/*
+                Replace this div with your YouTube or TikTok embed:
+
+                YouTube:
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                  frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                  gyroscope; picture-in-picture" allowFullScreen />
+
+                TikTok:
+                <blockquote className="tiktok-embed" cite="https://www.tiktok.com/@yourhandle/video/VIDEO_ID"
+                  data-video-id="VIDEO_ID" style={{maxWidth:"605px",minWidth:"325px"}}>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+              */}
+              <div className="ibz-video-play">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 3 }}>
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </div>
+              <p className="ibz-video-label">Add your YouTube or TikTok video here</p>
+            </div>
+          </div>
+
+          <p className="ibz-social-note">
+            Tag your photos and videos with <code>#TheIbezimakos</code> — 
+            we want to see all the love! Follow us at <code>@[yourhandle]</code>
           </p>
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
+      {/* FOOTER */}
       <footer className="ibz-footer">
-        <p className="ibz-footer-names">Tochukwu & Kasi Ibezimako</p>
-        <p className="ibz-footer-date">14 · June · 2025</p>
+        <p className="ibz-footer-names">Kasi & Tochukwu Ibezimako</p>
+        <p className="ibz-footer-date">15 · May · 2027 · Maryland, USA</p>
         <p className="ibz-footer-tag">#TheIbezimakos</p>
       </footer>
     </>
