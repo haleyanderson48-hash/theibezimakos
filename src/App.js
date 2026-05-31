@@ -262,12 +262,12 @@ export default function WeddingWebsite() {
             <span className="ibz-ampersand">&</span>
             Tochukwu
           </h1>
-          <p className="ibz-date-line">Friday, the Fifteenth of May · Two Thousand and Twenty-Seven</p>
+          <p className="ibz-date-line">May 15, 2027</p>
           <p className="ibz-hashtag">#TheIbezimakos</p>
         </div>
         <Divider />
         <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.1rem", fontStyle: "italic", fontWeight: 300, color: "#7A7468", letterSpacing: "0.06em" }}>
-          Maryland, USA · Forever
+          Maryland, USA
         </p>
       </section>
 
@@ -279,33 +279,27 @@ export default function WeddingWebsite() {
           <div>
             <p className="ibz-section-label">Our Story</p>
             <h2 className="ibz-section-title">
-              A decade of love,<br />
+              Ten years in,<br />
               <em>a lifetime to go</em>
             </h2>
             <Divider />
             <p className="ibz-body" style={{ marginBottom: "1.5rem" }}>
-              It started the way the best stories always do — unexpectedly, in the middle of ordinary life. 
-              We met in undergrad, two people with no idea what they were walking into. Our first date was 
-              at Cold Stone in Bowie, Maryland. Simple. Sweet. Completely unforgettable.
+              We met in undergrad and our first date was at Cold Stone. Neither of us knew it then, 
+              but we had just met the person we would spend the next decade growing up with.
             </p>
             <blockquote className="ibz-pull-quote">
               "The first time Tochukwu met my mom, he told her he was going to marry me."
             </blockquote>
             <p className="ibz-body" style={{ marginBottom: "1.5rem" }}>
-              He wasn't nervous. He wasn't joking. He was just — sure. That was nearly ten years ago, 
-              and he has never once wavered. While Kasi chased her calling through medical school and 
-              residency, Tochukwu followed — across cities, across time zones, through every long shift 
-              and sleepless night. He helped her move, more times than either of them would like to count. 
-              He showed up, quietly and completely, every single time.
+              No hesitation. Looking back now, it is funny because he ended up doing exactly what he said he would do.
             </p>
             <p className="ibz-body" style={{ marginBottom: "1.5rem" }}>
-              The proposal came in the Bahamas, just after residency — or so the official story goes 😉 
-              Under open skies, with the ocean as their witness, he asked the question he had already 
-              answered a decade before.
+              Over the last ten years, we have been through almost every stage of life together. Through college, 
+              career changes, long nights, moving boxes, and new cities, we have continued choosing each other through it all.
             </p>
             <p className="ibz-body">
-              Now, on May 15th 2027, they stand at the beginning of everything they have always been 
-              building toward. And they cannot wait to celebrate it with the people they love most.
+              After a decade of building a life together, we cannot wait to celebrate with the people 
+              who have loved and supported us along the way.
             </p>
           </div>
 
@@ -378,8 +372,7 @@ export default function WeddingWebsite() {
         <p className="ibz-section-label">RSVP</p>
         <h2 className="ibz-section-title"><em>Will you join us?</em></h2>
         <p className="ibz-body" style={{ margin: "0.75rem auto 0" }}>
-          Kindly respond by February 15th, 2027 — at least three months before the big day, 
-          so we can make sure everything is absolutely perfect.
+          Kindly respond by February 15th, 2027.
         </p>
 
         <div className="ibz-rsvp-wrap">
@@ -483,9 +476,9 @@ export default function WeddingWebsite() {
           <Divider />
           <p className="ibz-body" style={{ textAlign: "center", margin: "0 auto" }}>
             Honestly? Your presence at our wedding is the only gift we could ever ask for. 
-            Having the people we love most in the same room as we say "I do" — that is everything. 
-            But if your heart is feeling generous and you'd like to celebrate this new chapter with us, 
-            we've put together a few ways to be a part of the beautiful life we're building together. 💛
+            Having the people we love most in the same room as we say "I do" is everything. 
+            But if your heart is feeling generous and you would like to celebrate this new chapter with us, 
+            we have put together a few ways to be a part of the beautiful life we are building together. 💛
           </p>
         </div>
 
