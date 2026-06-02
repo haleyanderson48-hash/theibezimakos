@@ -294,7 +294,7 @@ export default function WeddingWebsite() {
               No hesitation. Looking back now, it is funny because he ended up doing exactly what he said he would do.
             </p>
             <p className="ibz-body" style={{ marginBottom: "1.5rem" }}>
-              Over the last ten years, we have been through almost every stage of life together. Through college, 
+              We have been through almost every stage of life together. Through college, 
               career changes, long nights, moving boxes, and new cities, we have continued choosing each other through it all.
             </p>
             <p className="ibz-body">
@@ -331,12 +331,12 @@ export default function WeddingWebsite() {
             <h3 className="ibz-detail-title">The Exchange of Vows</h3>
             <div className="ibz-detail-info">
               <strong>Date & Time</strong>
-              Friday, 15th May 2027 · Time TBD
+              Saturday, May 15, 2027 · Time TBD
               <strong style={{ marginTop: "1rem" }}>Location</strong>
               Maryland, USA<br />
               Venue details to follow
               <strong style={{ marginTop: "1rem" }}>Attire</strong>
-              Black Tie · Celebratory & festive
+              Asoebi
             </div>
           </div>
 
