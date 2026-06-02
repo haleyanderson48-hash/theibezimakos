@@ -356,11 +356,14 @@ export default function WeddingWebsite() {
           </div>
         </div>
 
-        <div style={{ marginTop: "3rem" }}>
-          <PhotoPlaceholder
-            label="Add your YouTube or TikTok video here"
-            caption="Replace with /images/venue.jpg"
-            style={{ width: "100%", aspectRatio: "21/9" }}
+        <div style={{ marginTop: "3rem", position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden" }}>
+          <iframe
+            src="https://www.youtube.com/embed/IY025Bs8D0w"
+            title="Kasi & Tochukwu"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
           />
         </div>
       </section>
@@ -520,36 +523,19 @@ export default function WeddingWebsite() {
             ))}
           </div>
 
-          {/* Video section */}
+          {/* Venue photo */}
           <div style={{ marginTop: "3rem" }}>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.65rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "#D4BFA0", marginBottom: "1.25rem" }}>Our latest</p>
-            <div className="ibz-video-frame">
-              {/*
-                Replace this div with your YouTube or TikTok embed:
-
-                YouTube:
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                  frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-                  gyroscope; picture-in-picture" allowFullScreen />
-
-                TikTok:
-                <blockquote className="tiktok-embed" cite="https://www.tiktok.com/@yourhandle/video/VIDEO_ID"
-                  data-video-id="VIDEO_ID" style={{maxWidth:"605px",minWidth:"325px"}}>
-                </blockquote>
-                <script async src="https://www.tiktok.com/embed.js"></script>
-              */}
-              <div className="ibz-video-play">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 3 }}>
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-              </div>
-              <p className="ibz-video-label">Add your YouTube or TikTok video here</p>
-            </div>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.65rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "#D4BFA0", marginBottom: "1.25rem" }}>Our venue</p>
+            <PhotoPlaceholder
+              label="Venue photo · coming soon"
+              caption="Replace with /images/venue.jpg"
+              style={{ width: "100%", aspectRatio: "21/9" }}
+            />
           </div>
 
           <p className="ibz-social-note">
-            Tag your photos and videos with <code>#TheIbezimakos</code> — 
-            we want to see all the love! Follow us at <code>Instagram: @Lovekasio · TikTok: @lovekasioo</code>
+            Tag your photos and videos with <code>#TheIbezimakos</code> and we want to see all the love!
+            Follow us on Instagram at <code>@Lovekasio</code> and TikTok at <code>@lovekasioo</code>
           </p>
         </div>
       </section>
