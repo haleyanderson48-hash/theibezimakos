@@ -358,7 +358,7 @@ export default function WeddingWebsite() {
 
         <div style={{ marginTop: "3rem" }}>
           <PhotoPlaceholder
-            label="Venue photo · coming soon"
+            label="Add your YouTube or TikTok video here"
             caption="Replace with /images/venue.jpg"
             style={{ width: "100%", aspectRatio: "21/9" }}
           />
