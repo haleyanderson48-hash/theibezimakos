@@ -549,7 +549,7 @@ export default function WeddingWebsite() {
 
           <p className="ibz-social-note">
             Tag your photos and videos with <code>#TheIbezimakos</code> — 
-            we want to see all the love! Follow us at <code>@[yourhandle]</code>
+            we want to see all the love! Follow us at <code>Instagram: @Lovekasio · TikTok: @lovekasioo</code>
           </p>
         </div>
       </section>
